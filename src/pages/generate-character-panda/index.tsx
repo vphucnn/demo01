@@ -13,12 +13,18 @@ import TableReward from 'src/views/table/mui/TableReward';
 import Generator from './section/Generator';
 import InfoSection from './section/InfoSection';
 import VideoSection from './section/VideSection';
+import { retrieveLaunchParams } from '@tma.js/sdk';
+
 
 
 export default function Page() {
+  const { initDataRaw } = retrieveLaunchParams();
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '3rem' }}>
+      <Box>
+        {initDataRaw ? initDataRaw.toString() : 'null'}
+      </Box>
       <Generator />
       <InfoSection/>
       <VideoSection/>
