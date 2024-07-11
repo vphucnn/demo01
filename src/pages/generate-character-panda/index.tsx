@@ -13,17 +13,22 @@ import TableReward from 'src/views/table/mui/TableReward';
 import Generator from './section/Generator';
 import InfoSection from './section/InfoSection';
 import VideoSection from './section/VideSection';
-import { retrieveLaunchParams } from '@tma.js/sdk';
 
+import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 
 export default function Page() {
-  const { initDataRaw } = retrieveLaunchParams();
+  const { initDataRaw, initData } = retrieveLaunchParams();
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '3rem' }}>
+      <h1>Hello</h1>
       <Box>
-        {initDataRaw ? initDataRaw.toString() : 'null'}
+        {initDataRaw ? initDataRaw.toString() : '3'}
+      </Box>
+
+      <Box>
+        {initData ? initData.toString() : '4'}
       </Box>
       <Generator />
       <InfoSection/>
